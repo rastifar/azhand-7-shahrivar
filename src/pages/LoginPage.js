@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
@@ -16,7 +16,7 @@ const validationSchema = yup.object().shape({
 
 const LoginPage = () => {
   const navigate = useNavigate();
-
+  const [showPassword, setShowPassword] = useState(false);
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -73,12 +73,16 @@ const LoginPage = () => {
           </div>
           <div className="field w-full">
             <span className="p-float-label p-input-icon-right w-full">
+              <i
+                className={showPassword ? "pi pi-eye" : "pi pi-lock-open"}
+                onClick={() => setShowPassword(!showPassword)}
+              />
               <InputText
                 id="password"
                 name="password"
                 value={formik.values.password}
                 onChange={formik.handleChange}
-                type="password"
+                type={showPassword ? "text" : "password"}
                 className={"w-full"}
               />
               <label htmlFor="password" className={"w-full"}>

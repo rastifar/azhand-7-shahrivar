@@ -12,12 +12,10 @@ const Dashboard = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const search = location.pathname.split("/").pop();
-  console.log(search);
   let tabVal = menu.findIndex((i) => i.link === search);
   if (tabVal === -1) {
     tabVal = 0;
   }
-  console.log(tabVal);
 
   const handleClick = () => {
     localStorage.removeItem(keys.loginToken);
@@ -29,16 +27,14 @@ const Dashboard = () => {
       label: "first page",
       command: (e) => {
         window.location.href = "/dashboard/firstpage";
-        setActiveIndex(e.item);
-        console.log(activeIndex);
+        // setActiveIndex(e.item);
+        console.log(e.item);
       },
     },
     {
-      label: "second page",
+        label: "second page",      
       command: (e) => {
-        window.location.href = "/dashboard/secondpage";
-        setActiveIndex(e.item);
-        console.log(activeIndex);
+        window.location.href = "/dashboard/secondpage";     
       },
     },
     {
@@ -67,6 +63,3 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
-
-
- 
