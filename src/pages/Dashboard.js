@@ -28,13 +28,16 @@ const Dashboard = () => {
       command: (e) => {
         window.location.href = "/dashboard/firstpage";
         // setActiveIndex(e.item);
+        setActiveIndex(0)
         console.log(e.item);
       },
     },
     {
-        label: "second page",      
+      label: "second page",    
+      activeItem: true,
       command: (e) => {
-        window.location.href = "/dashboard/secondpage";     
+        window.location.href = "/dashboard/secondpage"; 
+        setActiveIndex(1)    
       },
     },
     {
@@ -42,6 +45,7 @@ const Dashboard = () => {
 
       command: (e) => {
         window.location.href = "/dashboard/thirdpage";
+        setActiveIndex(2)
       },
     },
   ];

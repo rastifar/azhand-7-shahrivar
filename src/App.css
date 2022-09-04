@@ -1,0 +1,11 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--surface-0);
+    color:var(--text-color)
+}
+.topbar{
+    height: 60px;
+    background-color: var(--surface-50);
+  
+}
